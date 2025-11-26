@@ -1,0 +1,41 @@
+.table {
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+
+  .tableBox {
+    width: 100%;
+    border: 1px solid var(--table-border-color);
+
+    th {
+      background-color: var(--table-thead-bg-color);
+      color: var(--text-secondary-color);
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--table-border-color);
+    }
+
+    td {
+      background-color: var(--body-contain-bg-color);
+      color: var(--body-color);
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--table-border-color);
+    }
+  }
+
+  .tableSkeleton {
+    height: 1.2em;
+    width: 100%;
+    background-color: var(--skeleton-bg-color);
+    border-radius: 4px;
+  }
+
+  .tablePagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px;
+    font-size: 12px;
+  }
+}
