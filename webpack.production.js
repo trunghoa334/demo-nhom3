@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const config = require('./config.webpack')
+
 module.exports = {
     mode: 'production',
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -72,9 +73,13 @@ module.exports = {
             }
         }),
 
+        // --- ĐOẠN ĐÃ SỬA ---
         new Dotenv({
-            path: path.resolve(__dirname, '.env.production')
+            path: path.resolve(__dirname, '.env.production'),
+            systemvars: true, // <--- QUAN TRỌNG: Giúp Vercel đọc được biến môi trường
+            safe: true        // Giúp tránh lỗi crash nếu thiếu file .env
         })
+        // -------------------
     ],
     module: {
         rules: [
